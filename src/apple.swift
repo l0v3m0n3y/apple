@@ -94,4 +94,8 @@ public class AppleSite{
     public func getNewsroomArticles(category: String) async throws -> Any {
         try await fetchJSON(from: "\(api)/newsroom/article.\(category).json")
     }
+
+    public func getCareersGeoswitcherData() async throws -> Any {
+        try await fetchJSON(from: "\(api)/careers/ac-geoswitcher-data.json")
+    }
 }
