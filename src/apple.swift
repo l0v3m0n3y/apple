@@ -3,8 +3,6 @@ import Foundation
 import FoundationNetworking
 #endif
 
-// MARK: - Async URLSession shim (Linux / older Foundation compatibility)
-
 extension URLSession {
     func data(for request: URLRequest) async throws -> (Data, URLResponse) {
         return try await withCheckedThrowingContinuation { continuation in
@@ -78,7 +76,7 @@ public class AppleSite{
 
 
     public func getVideoLocalization(locale: String = "en-US") async throws -> Any {
-        try await fetchJSON(from: "\(Host.www)/ac/ac-video/latest/json/localization/\(locale).json")
+        try await fetchJSON(from: "\(api)/ac/ac-video/latest/json/localization/\(locale).json")
     }
 
 
