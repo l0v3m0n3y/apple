@@ -86,4 +86,12 @@ public class AppleSite{
             queryParameters: ["src": src, "locale": locale]
         )
     }
+
+    public func getNewsroomEverydayFeed() async throws -> Any {
+        try await fetchJSON(from: "\(api)/newsroom/newsroom.everydayfeed.json")
+    }
+    
+    public func getNewsroomArticles(category: String) async throws -> Any {
+        try await fetchJSON(from: "\(api)/newsroom/article.\(category).json")
+    }
 }
